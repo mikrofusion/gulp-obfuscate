@@ -43,7 +43,7 @@ Default: `'v'`
 Values: `var`, `func`, `abc`, `...`
 
 The string that will prefix all obfuscated strings.
-Obfuscated strings will be of the form '<prefix><integer>'.
+Obfuscated strings will be of the form \<prefix>\<integer>.
 
 ## License
 
