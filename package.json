@@ -1,0 +1,45 @@
+{
+  "name": "gulp-obfuscate",
+  "version": "0.1.0",
+  "description": "Obfuscate your code using gulp-regex-replace.",
+  "keywords": [
+    "gulpplugin",
+    "gulp-obfuscate",
+    "gulp",
+    "regex",
+    "replace",
+    "preprocessor",
+    "obfuscator",
+    "obfuscate"
+  ],
+  "homepage": "http://github.com/mikegroseclose/gulp-obfuscate",
+  "author": {
+    "name": "Mike Groseclose",
+    "email": "mikegroseclose@gmail.com",
+    "url": "http://mikegroseclose.com"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mikegroseclose/gulp-obfuscate.git"
+  },
+  "scripts": {
+    "test": "mocha -R spec"
+  },
+  "engines": {
+    "node": ">=0.9.0"
+  },
+  "dependencies": {
+    "gulp-util": "~2.2.14",
+    "gulp-regex-replace": "0.1.1"
+  },
+  "devDependencies": {
+    "mocha": "~1.18.2",
+    "event-stream": "~3.1.0",
+    "should": "~3.3.0"
+  },
+  "licenses": [{
+    "type": "MIT",
+    "url": "http://github.com/mikegroseclose/gulp-obfuscate/raw/master/LICENSE"
+  }]
+}
