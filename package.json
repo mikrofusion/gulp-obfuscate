@@ -1,6 +1,6 @@
 {
   "name": "gulp-obfuscate",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Obfuscate your code using gulp-regex-replace.",
   "keywords": [
     "gulpplugin",

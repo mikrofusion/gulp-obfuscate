@@ -30,17 +30,17 @@ var gulpObfuscate = function(options) {
   });
 };
 
-gulpObfuscator.init = function() {
-  gulpObfuscator.nameArray = [];
-  gulpObfuscator.minSeed = 1;
-  gulpObfuscator.maxSeed = 999;
-  gulpObfuscator.defaultRegex = void 0;
-  gulpObfuscator.defaultPrefix = 'v'
-  gulpObfuscator.seed = Math.floor(Math.random() *
-                          (gulpObfuscator.maxSeed - gulpObfuscator.minSeed + 1))
-                          + gulpObfuscator.minSeed;
+gulpObfuscate.init = function() {
+  gulpObfuscate.nameArray = [];
+  gulpObfuscate.minSeed = 1;
+  gulpObfuscate.maxSeed = 999;
+  gulpObfuscate.defaultRegex = void 0;
+  gulpObfuscate.defaultPrefix = 'v'
+  gulpObfuscate.seed = Math.floor(Math.random() *
+                          (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))
+                          + gulpObfuscate.minSeed;
 };
 
-gulpObfuscator.init();
+gulpObfuscate.init();
 
-module.exports = gulpObfuscator;
+module.exports = gulpObfuscate;
