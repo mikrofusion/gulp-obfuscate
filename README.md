@@ -16,8 +16,29 @@ var obfuscate = require('gulp-obfuscate');
 
 gulp.task('default', function () {
 	return gulp.src('test.js')
-		.pipe(obfuscate({regex:'__v_[_A-Za-z0-9]+__'}));
+		.pipe(obfuscate({regex:'_v_[_A-Za-z0-9]+_'}))
+    .pipe(obfuscate({regex:'_f_[_A-Za-z0-9]+_', prefix: 'f'}));
 });
+```
+## Example
+
+The default gulp task above will output the following
+
+```js
+function f4(v1, v2) {
+  var v3 = v1 + v2;
+  return v3;
+}
+
+```
+
+from the input below
+
+```js
+function _f_sum_(_v_a_, _v_b_) {
+  var _v_sum_ = _v_a_ + _v_b_;
+  return _v_sum_;
+}
 ```
 
 ## API
