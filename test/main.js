@@ -17,6 +17,7 @@ function generateFile(contents) {
 }
 
 function expect_equals(input, output, done, options) {
+  obfuscate.init();
   obfuscate.seed = 1; // override seed for tests
   var stream = obfuscate(options);
 
@@ -33,6 +34,16 @@ describe('gulp-obfuscate', function() {
   describe('when given an empty input buffer', function() {
     it('does nothing', function(done) {
       expect_equals('', '', done);
+    });
+  });
+
+  describe('given a string with javascript variables', function() {
+    describe('and a regular expression given as an option', function() {
+      var options = {regex: 'var ([_A-Za-z0-9]+?)[= ,;]', prefix:'v'};
+      it('obfuscates any javascript variables matching the regular expression', function (done) {
+        expect_equals('var variable1 = 0; var variable2 = 0; var variable3; variable4;',
+                      'var v1 = 0; var v2 = 0; var v3; variable4;', done, options);
+      });
     });
   });
 

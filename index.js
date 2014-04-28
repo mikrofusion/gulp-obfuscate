@@ -6,9 +6,9 @@ var replace = require('gulp-regex-replace');
 function convertVar(nameArray, prefix, v) {
   if (v in nameArray) { return nameArray[v]; }
 
-	var name = prefix + (Object.keys(nameArray).length + gulpObfuscate.seed);
-	nameArray[v] = name;
-	return name;
+  var name = prefix + (Object.keys(nameArray).length + gulpObfuscate.seed);
+  nameArray[v] = name;
+  return name;
 };
 
 var gulpObfuscate = function(options) {
