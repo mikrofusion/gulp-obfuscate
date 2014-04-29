@@ -39,8 +39,16 @@ gulpObfuscate.init = function() {
   gulpObfuscate.nameArray = [];
   gulpObfuscate.minSeed = 1;
   gulpObfuscate.maxSeed = 999;
-  gulpObfuscate.exclude = void 0;
-  gulpObfuscate.defaultRegex = [ 'var (.*?[\.;])', { include: '([a-zA-Z0-9\__$]+)[(, =;]', exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[(, =;]' } ];
+  gulpObfuscate.exclude = [
+      'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
+      'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
+      'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',
+      'void', 'while', 'with'
+    ];
+  gulpObfuscate.defaultRegex = [ 'var (.*?[\.;])',
+    { include: '([a-zA-Z0-9\__$]+)[(, =;]',
+      exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[(, =;]',
+    } ];
   gulpObfuscate.defaultPrefix = 'v'
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))

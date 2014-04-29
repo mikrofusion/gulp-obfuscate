@@ -67,11 +67,14 @@ Obfuscated strings will be of the form \<prefix>\<integer>.
 
 Type: `String` or `Array of Strings`
 
-Default: ` `
+Default: `'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
+          'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
+          'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',
+          'void', 'while', 'with'`
 
 Values: `do_not_replace`, `abc`, `...`
 
-Regular expressions to be globally excluded from obfuscation.
+Regular expressions to be globally excluded from obfuscation.  Current defaults are javascript reserved words.
 
 See [gulp-regex-replace](//github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
 
