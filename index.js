@@ -40,7 +40,7 @@ gulpObfuscate.init = function() {
   gulpObfuscate.minSeed = 1;
   gulpObfuscate.maxSeed = 999;
   gulpObfuscate.exclude = void 0;
-  gulpObfuscate.defaultRegex = [ 'var (.*?;)', { include: '([a-zA-Z0-9\__$]+)[(, =;]', exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[(, =;]' } ];
+  gulpObfuscate.defaultRegex = [ 'var (.*?[\.;])', { include: '([a-zA-Z0-9\__$]+)[(, =;]', exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[(, =;]' } ];
   gulpObfuscate.defaultPrefix = 'v'
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))
