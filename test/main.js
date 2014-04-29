@@ -54,5 +54,13 @@ describe('gulp-obfuscate', function() {
                       'Lorem ipsum v1 sit amet.  v2.', done, options);
       });
     });
+
+    describe('and an exclude list', function() {
+      it('does not replace excluded variables', function (done) {
+        var options = {exclude: 'dnr'};
+        expect_equals('var variable1 = 0; var dnr; var variable2 = 0; var variable3, variable4; variable5;',
+                      'var v1 = 0; var dnr; var v3 = 0; var v4, v5; variable5;', done, options);
+      });
+    });
   });
 });

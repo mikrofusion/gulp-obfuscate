@@ -63,6 +63,18 @@ Values: `var`, `func`, `abc`, `...`
 The string that will prefix all obfuscated strings.
 Obfuscated strings will be of the form \<prefix>\<integer>.
 
+#### options.exclude
+
+Type: `String` or `Array of Strings`
+
+Default: ` `
+
+Values: `do_not_replace`, `abc`, `...`
+
+Regular expressions to be globally excluded from obfuscation.
+
+See [gulp-regex-replace](//github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
+
 ## License
 
 [MIT](http://opensource.org/licenses/MIT) © Mike Groseclose

@@ -22,11 +22,16 @@ var gulpObfuscate = function(options) {
     options.prefix = gulpObfuscate.defaultPrefix;
   }
 
+  if (options.exclude == void 0) {
+    options.exclude = gulpObfuscate.defaultExclude;
+  }
+
   return replace({
     'regex': options.regex,
     'replace': function(input) {
         return convertVar(gulpObfuscate.nameArray, options.prefix, input);
-    }
+    },
+    'exclude': options.exclude
   });
 };
 
@@ -34,7 +39,8 @@ gulpObfuscate.init = function() {
   gulpObfuscate.nameArray = [];
   gulpObfuscate.minSeed = 1;
   gulpObfuscate.maxSeed = 999;
-  gulpObfuscate.defaultRegex = [ 'var (.*?;)', { include: '([a-zA-Z0-9_$]+)[, =;]', exclude: '=[ ]*?([a-zA-Z0-9_$]+)[, =;]' } ];
+  gulpObfuscate.exclude = void 0;
+  gulpObfuscate.defaultRegex = [ 'var (.*?;)', { include: '([a-zA-Z0-9\__$]+)[, =;]', exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[, =;]' } ];
   gulpObfuscate.defaultPrefix = 'v'
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))
