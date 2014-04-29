@@ -16,29 +16,24 @@ var obfuscate = require('gulp-obfuscate');
 
 gulp.task('default', function () {
 	return gulp.src('test.js')
-		.pipe(obfuscate({regex:'_v_[_A-Za-z0-9]+_'}))
-    .pipe(obfuscate({regex:'_f_[_A-Za-z0-9]+_', prefix: 'f'}));
+		.pipe(obfuscate());
 });
 ```
 ## Example
 
-The default gulp task above will output the following
+By default, gulp-obfuscate attempts to obfuscate javascript variables.
+The default settings will give the following output:
 
 ```js
-function f4(v1, v2) {
-  var v3 = v1 + v2;
-  return v3;
-}
-
+  var v1, v2 = ghi;
+  return v2;
 ```
 
-from the input below
+from the input below:
 
 ```js
-function _f_sum_(_v_a_, _v_b_) {
-  var _v_sum_ = _v_a_ + _v_b_;
-  return _v_sum_;
-}
+  var abc, def = ghi;
+  return def;
 ```
 
 ## API
@@ -47,13 +42,15 @@ function _f_sum_(_v_a_, _v_b_) {
 
 #### options.regex
 
-Type: `String`
+Type: `String`, `Array of Strings`, or `Key/value with 'include' and 'exclude' as keys`
 
-Default: ` `
+Default: `[ 'var (.*?;)', { include: '([a-zA-Z0-9_$]+)[, =;]', exclude: '=[ ]*?([a-zA-Z0-9_$]+)[, =;]' } ]`
 
 Values: `word`, `__v_[_A-Za-z0-9]+__`, `...`
 
-The regular expresion used to match strings that should be obfuscated.
+The regular expresions used to match strings that should be obfuscated.
+
+See [gulp-regex-replace](//github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
 
 #### options.prefix
 

@@ -39,10 +39,9 @@ describe('gulp-obfuscate', function() {
 
   describe('given a string with javascript variables', function() {
     describe('and a regular expression given as an option', function() {
-      var options = {regex: 'var ([_A-Za-z0-9]+?)[= ,;]', prefix:'v'};
       it('obfuscates any javascript variables matching the regular expression', function (done) {
-        expect_equals('var variable1 = 0; var variable2 = 0; var variable3; variable4;',
-                      'var v1 = 0; var v2 = 0; var v3; variable4;', done, options);
+        expect_equals('var variable1 = 0; var variable2 = 0; var variable3, variable4; variable5;',
+                      'var v1 = 0; var v2 = 0; var v3, v4; variable5;', done, void 0);
       });
     });
   });
