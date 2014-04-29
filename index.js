@@ -23,8 +23,16 @@ var gulpObfuscate = function(options) {
   }
 
   if (options.exclude == void 0) {
-    options.exclude = gulpObfuscate.defaultExclude;
+    options.exclude = [];
   }
+
+  if(typeof(options.exclude) != 'Array') {
+    options.exclude = [options.exclude];
+  }
+
+  gulpObfuscate.defaultExclude.forEach(function(element) {
+    options.exclude.push(element);
+  });
 
   return replace({
     'regex': options.regex,
@@ -39,7 +47,7 @@ gulpObfuscate.init = function() {
   gulpObfuscate.nameArray = [];
   gulpObfuscate.minSeed = 1;
   gulpObfuscate.maxSeed = 999;
-  gulpObfuscate.exclude = [
+  gulpObfuscate.defaultExclude = [
       'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
       'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
       'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',

@@ -58,8 +58,14 @@ describe('gulp-obfuscate', function() {
     describe('and an exclude list', function() {
       it('does not replace excluded variables', function (done) {
         var options = {exclude: 'dn.*'};
-        expect_equals('var variable1 = 0; var dnr; var variable2 = 0; var variable3, variable4; variable5;var v = B.C.M.b;',
+        expect_equals('var variabl1 = 0; var dnr; var variable2 = 0; var variable3, variable4; variable5;var v = B.C.M.b;',
                       'var v1 = 0; var dnr; var v3 = 0; var v4, v5; variable5;var v6 = B.C.M.b;', done, options);
+      });
+
+      it('it does not replace javascript keywords', function (done) {
+        var options = {exclude: 'dn.*'};
+        expect_equals('var list; for (var i in list; i < 10; i++) {',
+                      'var v4; for (var v2 in v4; v2 < 10; v2++) {', done, options);
       });
     });
   });
