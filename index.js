@@ -26,7 +26,7 @@ var gulpObfuscate = function(options) {
     options.exclude = [];
   }
 
-  if(typeof(options.exclude) != 'Array') {
+  if(!(options.exclude instanceof Array)) {
     options.exclude = [options.exclude];
   }
 
