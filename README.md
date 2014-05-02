@@ -21,47 +21,30 @@ gulp.task('default', function () {
 ```
 ## Example
 
-By default, gulp-obfuscate attempts to obfuscate javascript variables.
-The default settings will give the following output:
-
+gulp-obfuscate obfuscates your javascript code so that it looks like this:
 ```js
-  var v1, v2 = ghi;
-  return v2;
+  function ಠ_ಠ4() {
+    var ಠ_ಠ1, ಠ_ಠ2, ಠ_ಠ3;
+    ...
+    ಠ_ಠ3 = ಠ_ಠ1 + ಠ_ಠ2;
+    return ಠ_ಠ3;
+  }
 ```
 
-from the input below:
+when given the following code:
 
 ```js
-  var abc, def = ghi;
-  return def;
+  function func() {
+    var abc, v1, v2;
+    ...
+    abc = v1 + v2;
+    return abc;
+  }
 ```
 
 ## API
 
 ### obfuscate(options)
-
-#### options.regex
-
-Type: `String`, `Array of Strings`, or `Key/value with 'include' and 'exclude' as keys`
-
-Default: `[ 'var (.*?;)', { include: '([a-zA-Z0-9_$]+)[, =;]', exclude: '=[ ]*?([a-zA-Z0-9_$]+)[, =;]' } ]`
-
-Values: `word`, `__v_[_A-Za-z0-9]+__`, `...`
-
-The regular expresions used to match strings that should be obfuscated.
-
-See [gulp-regex-replace](//github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
-
-#### options.prefix
-
-Type: `String`
-
-Default: `'v'`
-
-Values: `var`, `func`, `abc`, `...`
-
-The string that will prefix all obfuscated strings.
-Obfuscated strings will be of the form \<prefix>\<integer>.
 
 #### options.exclude
 
@@ -75,6 +58,9 @@ Default: `'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
 Values: `do_not_replace`, `abc`, `...`
 
 Regular expressions to be globally excluded from obfuscation.  Current defaults are javascript reserved words.
+This is often needed for variables or functions that need to stay named the same (such as interfaces to other code).
+
+Note:  defaults will be automatically appended to any options.exclude variables provided.
 
 See [gulp-regex-replace](//github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
 
