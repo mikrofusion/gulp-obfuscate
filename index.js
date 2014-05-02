@@ -8,6 +8,9 @@ function convertVar(nameArray, prefix, v) {
 
   var name = prefix + (Object.keys(nameArray).length + gulpObfuscate.seed);
   nameArray[v] = name;
+  if (gulpObfuscate.debug == true) {
+    gutil.log('gulp-obfuscate (converting): ' + name + ' <-> ' + v );
+  }
   return name;
 };
 
