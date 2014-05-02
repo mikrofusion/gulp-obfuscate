@@ -44,8 +44,8 @@ describe('gulp-obfuscate', function() {
       });
 
       it('obfuscates any javascript prototype variables', function (done) {
-        expect_equals('this.prototype.xyz = 1;',
-                      'this.prototype.ಠ_ಠ1 = 1;', done, void 0);
+        expect_equals('var abc; abc.xyz = 1.0; if(abc.length == 1)',
+                      'var ಠ_ಠ1; ಠ_ಠ1.ಠ_ಠ2 = 1.0; if(ಠ_ಠ1.length == 1)', done, void 0);
       });
   });
 

@@ -29,8 +29,8 @@ var gulpObfuscate = function(options) {
   return replace([
     {
       'regex': [ 'var (.*?[\.;])',
-                { include: '([a-zA-Z0-9\__$]+)[(, =;]',
-                  exclude: '=[ ]*?([a-zA-Z0-9\__$]+)[(, =;]',
+                { include: '([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[(, =;]',
+                  exclude: '=[ ]*?([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[(, =;]',
                 } ],
       'replace': function(input) {
           return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
@@ -38,14 +38,14 @@ var gulpObfuscate = function(options) {
       'exclude': options.exclude
     },
     {
-        'regex': 'function[ ]+([a-zA-Z0-9\__$]+)[ ]*?[\(]',
+        'regex': 'function[ ]+([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[ ]*?\\(',
         'replace': function(input) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
         'exclude': options.exclude
     },
     {
-        'regex': 'prototype.([a-zA-Z0-9\__$]+)[ ]*?=',
+        'regex': '\\.([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[ ]*?\\=(?!=)',
         'replace': function(input) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
