@@ -45,7 +45,7 @@ var gulpObfuscate = function(options) {
         'exclude': options.exclude
     },
     {
-        'regex': '\\.([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[ ]*?\\=(?!=)',
+        'regex': '\\.([a-za-z\__$][0-9a-za-z\__$]*?)[ ]*?\\=(?!=)',
         'replace': function(input) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
@@ -57,7 +57,16 @@ var gulpObfuscate = function(options) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
         'exclude': options.exclude
-    }
+    },
+    {
+        'regex': [ '\\((.*?[\)])[ ]*?{',
+                   '([a-zA-Z\__$][0-9a-zA-Z\__$]*?)[ ]*?[),]'
+                 ],
+        'replace': function(input) {
+            return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
+        },
+        'exclude': options.exclude
+    },
   ]);
 };
 
@@ -69,7 +78,7 @@ gulpObfuscate.init = function() {
       'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
       'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
       'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',
-      'void', 'while', 'with', 'ಠ_ಠ', 'prototype'
+      'void', 'while', 'with', 'ಠ_ಠ', 'prototype', 'null', 'true', 'false'
     ];
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))

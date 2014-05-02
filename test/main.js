@@ -47,6 +47,11 @@ describe('gulp-obfuscate', function() {
         expect_equals('var abc; abc.xyz = 1.0; if(abc.length == 1)',
                       'var ಠ_ಠ1; ಠ_ಠ1.ಠ_ಠ2 = 1.0; if(ಠ_ಠ1.length == 1)', done, void 0);
       });
+
+      it('obfuscates any variables passed to functions', function (done) {
+        expect_equals('function abc(def){}; abc(def, hij) {',
+                      'function ಠ_ಠ1(ಠ_ಠ2){}; ಠ_ಠ1(ಠ_ಠ2, ಠ_ಠ4) {', done, void 0);
+      });
   });
 
   describe('given a string with javascript functions', function() {
