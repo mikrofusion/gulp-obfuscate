@@ -41,31 +41,33 @@ describe('gulp-obfuscate', function() {
     describe('and a regular expression given as an option', function() {
       it('obfuscates any javascript variables matching the regular expression', function (done) {
         expect_equals('var variable1 = 0; var variable2 = 0; var variable3, variable4; variable5;',
-                      'var v1 = 0; var v2 = 0; var v3, v4; variable5;', done, void 0);
+                      'var ಠ_ಠ1 = 0; var ಠ_ಠ2 = 0; var ಠ_ಠ3, ಠ_ಠ4; variable5;', done, void 0);
+      });
+    });
+  });
+
+  describe('given a string with javascript functions', function() {
+    describe('and a regular expression given as an option', function() {
+      it('obfuscates any function names matching the regular expression', function (done) {
+        expect_equals('function abc(123) {}; var cde; function foo(',
+                      'function ಠ_ಠ2(123) {}; var ಠ_ಠ1; function ಠ_ಠ3(', done, void 0);
       });
     });
   });
 
   describe('given a list of words as input', function() {
-    describe('and a regular expression given as an option', function() {
-      var options = {regex: '__v_[_A-Za-z0-9]+__', prefix:'v'};
-      it('obfuscates any words matching the regular expression', function (done) {
-        expect_equals('Lorem ipsum __v_dolor__ sit amet.  __v_change__.',
-                      'Lorem ipsum v1 sit amet.  v2.', done, options);
-      });
-    });
 
     describe('and an exclude list', function() {
       it('does not replace excluded variables', function (done) {
         var options = {exclude: 'dn.*'};
         expect_equals('var variabl1 = 0; var dnr; var variable2 = 0; var variable3, variable4; variable5;var v = B.C.M.b;',
-                      'var v1 = 0; var dnr; var v3 = 0; var v4, v5; variable5;var v6 = B.C.M.b;', done, options);
+                      'var ಠ_ಠ1 = 0; var dnr; var ಠ_ಠ3 = 0; var ಠ_ಠ4, ಠ_ಠ5; variable5;var ಠ_ಠ6 = B.C.M.b;', done, options);
       });
 
       it('it does not replace javascript keywords', function (done) {
         var options = {exclude: ['dn.*']};
         expect_equals('var list; for (var i in list; i < 10; i++) {',
-                      'var v4; for (var v2 in v4; v2 < 10; v2++) {', done, options);
+                      'var ಠ_ಠ1; for (var ಠ_ಠ2 in ಠ_ಠ1; ಠ_ಠ2 < 10; ಠ_ಠ2++) {', done, options);
       });
     });
   });
