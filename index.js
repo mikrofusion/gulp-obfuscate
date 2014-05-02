@@ -43,6 +43,13 @@ var gulpObfuscate = function(options) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
         'exclude': options.exclude
+    },
+    {
+        'regex': 'prototype.([a-zA-Z0-9\__$]+)[ ]*?=',
+        'replace': function(input) {
+            return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
+        },
+        'exclude': options.exclude
     }
   ]);
 };
@@ -55,7 +62,7 @@ gulpObfuscate.init = function() {
       'break', 'case', 'catch', 'continue', 'debugger', 'default', 'delete',
       'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
       'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',
-      'void', 'while', 'with', 'ಠ_ಠ'
+      'void', 'while', 'with', 'ಠ_ಠ', 'prototype'
     ];
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))

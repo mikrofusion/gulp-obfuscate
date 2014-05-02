@@ -42,6 +42,11 @@ describe('gulp-obfuscate', function() {
         expect_equals('var variable1 = 0; var variable2 = 0; var variable3, variable4; variable5;',
                       'var ಠ_ಠ1 = 0; var ಠ_ಠ2 = 0; var ಠ_ಠ3, ಠ_ಠ4; variable5;', done, void 0);
       });
+
+      it('obfuscates any javascript prototype variables', function (done) {
+        expect_equals('this.prototype.xyz = 1;',
+                      'this.prototype.ಠ_ಠ1 = 1;', done, void 0);
+      });
   });
 
   describe('given a string with javascript functions', function() {
