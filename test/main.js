@@ -56,6 +56,13 @@ describe('gulp-obfuscate', function() {
       });
   });
 
+  describe('given a hash of javascript functions', function() {
+      it('obfuscates any function names', function (done) {
+        expect_equals('abc: function(123) {}, def: function(',
+                      'ಠ_ಠ1: function(123) {}, ಠ_ಠ2: function(', done, void 0);
+      });
+  });
+
   describe('given a list of words as input', function() {
     describe('and an exclude list', function() {
       it('does not replace excluded variables', function (done) {

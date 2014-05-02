@@ -50,6 +50,13 @@ var gulpObfuscate = function(options) {
             return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
         },
         'exclude': options.exclude
+    },
+    {
+        'regex': '([a-zA-Z\__$][0-9a-zA-Z\__$]*?):[ ]*?function',
+        'replace': function(input) {
+            return convertVar(gulpObfuscate.nameArray, 'ಠ_ಠ', input);
+        },
+        'exclude': options.exclude
     }
   ]);
 };
