@@ -38,25 +38,20 @@ describe('gulp-obfuscate', function() {
   });
 
   describe('given a string with javascript variables', function() {
-    describe('and a regular expression given as an option', function() {
-      it('obfuscates any javascript variables matching the regular expression', function (done) {
+      it('obfuscates any javascript variables', function (done) {
         expect_equals('var variable1 = 0; var variable2 = 0; var variable3, variable4; variable5;',
                       'var ಠ_ಠ1 = 0; var ಠ_ಠ2 = 0; var ಠ_ಠ3, ಠ_ಠ4; variable5;', done, void 0);
       });
-    });
   });
 
   describe('given a string with javascript functions', function() {
-    describe('and a regular expression given as an option', function() {
-      it('obfuscates any function names matching the regular expression', function (done) {
+      it('obfuscates any function names', function (done) {
         expect_equals('function abc(123) {}; var cde; function foo(',
                       'function ಠ_ಠ2(123) {}; var ಠ_ಠ1; function ಠ_ಠ3(', done, void 0);
       });
-    });
   });
 
   describe('given a list of words as input', function() {
-
     describe('and an exclude list', function() {
       it('does not replace excluded variables', function (done) {
         var options = {exclude: 'dn.*'};
