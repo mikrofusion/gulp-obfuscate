@@ -71,16 +71,22 @@ describe('gulp-obfuscate', function() {
   describe('given a list of words as input', function() {
     describe('and an exclude list', function() {
       it('does not replace excluded variables', function (done) {
-        var options = {exclude: 'dn.*'};
+        var options = { exclude: 'dn.*' }
         expect_equals('var variabl1 = 0; var dnr; var variable2 = 0; var variable3, variable4; variable5;var v = B.C.M.b;',
                       'var ಠ_ಠ1 = 0; var dnr; var ಠ_ಠ3 = 0; var ಠ_ಠ4, ಠ_ಠ5; variable5;var ಠ_ಠ6 = B.C.M.b;', done, options);
       });
 
       it('it does not replace javascript keywords', function (done) {
-        var options = {exclude: ['dn.*']};
         expect_equals('var list; for (var i in list; i < 10; i++) {',
-                      'var ಠ_ಠ1; for (var ಠ_ಠ2 in ಠ_ಠ1; ಠ_ಠ2 < 10; ಠ_ಠ2++) {', done, options);
+                      'var ಠ_ಠ1; for (var ಠ_ಠ2 in ಠ_ಠ1; ಠ_ಠ2 < 10; ಠ_ಠ2++) {', done, void 0);
       });
+    });
+  });
+
+  describe('given a replace option to summon zalgo', function() {
+    it('H͇̬͔̳̖̅̒ͥͧẸ̖͇͈͍̱̭̌͂͆͊_C͈OM̱̈́͛̈ͩ͐͊ͦEͨ̓̐S̬̘͍͕͔͊̆̑̈́̅', function(done) {
+      var options = { replaceMethod: obfuscate.ZALGO };
+      expect_equals('var zalgo;', 'var H͇̬͔̳̖̅̒ͥͧẸ̖͇͈͍̱̭̌͂͆͊_C͈OM̱̈́͛̈ͩ͐͊ͦEͨ̓̐S̬̘͍͕͔͊̆̑̈́̅1;', done, options);
     });
   });
 });

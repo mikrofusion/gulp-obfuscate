@@ -1,0 +1,17 @@
+{
+  "name": "gulp-obfuscate-examples",
+  "author": "Mike Groseclose",
+  "email": "mike.groseclose@gmail.com",
+  "description": "This is the package for the example files for gulp-obfuscate",
+  "version": "0.0.1",
+  "private": true,
+  "main": "index.js",
+  "dependencies": {
+    "gulp": "^3.6.2",
+    "coffee-script": "^1.7.1",
+    "gulp-coffee": "^1.4.2",
+    "gulp-uglify": "^0.2.1",
+    "gulp-util": "^2.2.14",
+    "gulp-plumber": "^0.6.1"
+  }
+}
