@@ -12,13 +12,8 @@ gulp.task 'scripts', ->
   gulp.src 'src/**/*.coffee'
     .pipe plumber()
     .pipe coffee bare: true
-    .pipe gulp.dest 'compiled'
-
-  # obfuscate and minify (note: mangle:false argument to gulp-uglify
-  gulp.src 'compiled/app.js'
-    .pipe plumber()
     .pipe obfuscate({exclude: ['CalcCtrl', 'left', 'right', 'result', 'name', 'operators', 'operator'], replaceMethod: obfuscate.ZALGO})
     .pipe uglify mangle:false
-    .pipe gulp.dest 'obfuscated'
+    .pipe gulp.dest 'public'
 
 gulp.task 'default', [ 'scripts' ]
