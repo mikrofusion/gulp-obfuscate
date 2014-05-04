@@ -58,12 +58,12 @@ Default:  `LOOK_OF_DISAPPROVAL`
 
 Example:
 
-`
+```js
 obfuscate = require('gulp-obfuscate');
 ...
 .pipe(obfuscate({ replaceMethod: obfuscate.ZALGO }))
 ...
-`
+```
 
 Note: Both obfuscation methods create valid javascript variables per ECMAScript 5.1.
 That said, there is no guarantee that older browsers can handle the mighty power of ZALGO.
