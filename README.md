@@ -40,9 +40,11 @@ and this:
   }
 ```
 
----
-See a working example [here](http://mikegroseclose.github.io/gulp-obfuscate/)
----
+--
+
+##### See a working example [here](http://mikegroseclose.github.io/gulp-obfuscate/)
+
+--
 
 ## API
 
