@@ -102,7 +102,7 @@ gulpObfuscate.init = function() {
       'do', 'else', 'finally', 'for', 'function', 'if', 'in', 'instanceof',
       'new', 'return', 'switch', 'this', 'throw', 'try', 'typeof', 'var',
       'void', 'while', 'with', 'prototype', 'null', 'true', 'false',
-      'undefined', 'NaN', 'Infinity', 'ಠ_ಠ', 'H͇̬͔̳̖̅̒ͥͧẸ̖͇͈͍̱̭̌͂͆͊_C͈OM̱̈́͛̈ͩ͐͊ͦEͨ̓̐S̬̘͍͕͔͊̆̑̈́̅'
+      'undefined', 'NaN', 'Infinity', 'ಠ_ಠ', 'H͇̬͔̳̖̅̒ͥͧẸ̖͇͈͍̱̭̌͂͆͊_C͈OM̱̈́͛̈ͩ͐͊ͦEͨ̓̐S̬̘͍͕͔͊̆̑̈́̅', 'each', 'forEach'
     ];
   gulpObfuscate.seed = Math.floor(Math.random() *
                           (gulpObfuscate.maxSeed - gulpObfuscate.minSeed + 1))
