@@ -52,6 +52,11 @@ describe('gulp-obfuscate', function() {
         expect_equals('function abc(def){}; abc(def, hij) {',
                       'function ಠ_ಠ1(ಠ_ಠ2){}; ಠ_ಠ1(ಠ_ಠ2, ಠ_ಠ4) {', done, void 0);
       });
+
+      it('doesnt fail on input string test 1', function(done) {
+        expect_equals('.forEach = function', '.forEach = function', done, void 0);
+      });
+
   });
 
   describe('given a string with javascript functions', function() {
@@ -89,4 +94,5 @@ describe('gulp-obfuscate', function() {
       expect_equals('var zalgo;', 'var H͇̬͔̳̖̅̒ͥͧẸ̖͇͈͍̱̭̌͂͆͊_C͈OM̱̈́͛̈ͩ͐͊ͦEͨ̓̐S̬̘͍͕͔͊̆̑̈́̅1;', done, options);
     });
   });
+
 });
