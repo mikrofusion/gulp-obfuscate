@@ -57,6 +57,9 @@ describe('gulp-obfuscate', function() {
         expect_equals('.forEach = function', '.forEach = function', done, void 0);
       });
 
+      it('doesnt fail on input string test 2', function(done) {
+        expect_equals('.indexOf = function', '.ಠ_ಠ1 = function', done, void 0);
+      });
   });
 
   describe('given a string with javascript functions', function() {

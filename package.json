@@ -1,6 +1,6 @@
 {
   "name": "gulp-obfuscate",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Obfuscate your code.",
   "keywords": [
     "gulpplugin",

@@ -4,7 +4,12 @@ var gutil = require('gulp-util');
 var replace = require('gulp-regex-replace');
 
 function convertVar(nameArray, prefix, v) {
-  if (v in nameArray) { return nameArray[v]; }
+
+  for (var key in nameArray) {
+    if (key == v) {
+      return nameArray[v];
+    }
+  }
 
   var name = prefix + (Object.keys(nameArray).length + gulpObfuscate.seed);
   nameArray[v] = name;
@@ -89,6 +94,7 @@ var gulpObfuscate = function(options) {
 };
 
 gulpObfuscate.init = function() {
+  gulpObfuscate.debug = false;
   gulpObfuscate.ZALGO = 0;
   gulpObfuscate.LOOK_OF_DISAPPROVAL = 1;
 
