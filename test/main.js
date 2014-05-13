@@ -60,6 +60,10 @@ describe('gulp-obfuscate', function() {
       it('doesnt fail on input string test 2', function(done) {
         expect_equals('.indexOf = function', '.ಠ_ಠ1 = function', done, void 0);
       });
+
+      it('doesnt fail on input string test 3', function(done) {
+        expect_equals('this.length = 1', 'this.ಠ_ಠ1 = 1', done, void 0);
+      });
   });
 
   describe('given a string with javascript functions', function() {
