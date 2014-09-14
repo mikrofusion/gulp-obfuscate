@@ -12,16 +12,15 @@
     "obfuscator",
     "obfuscate"
   ],
-  "homepage": "http://github.com/mikegroseclose/gulp-obfuscate",
+  "homepage": "http://github.com/mikrofusion/gulp-obfuscate",
   "author": {
     "name": "Mike Groseclose",
-    "email": "mikegroseclose@gmail.com",
-    "url": "http://mikegroseclose.com"
+    "email": "mikegroseclose@gmail.com"
   },
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "git://github.com/mikegroseclose/gulp-obfuscate.git"
+    "url": "git://github.com/mikrofusion/gulp-obfuscate.git"
   },
   "scripts": {
     "test": "mocha -R spec"
@@ -40,6 +39,6 @@
   },
   "licenses": [{
     "type": "MIT",
-    "url": "http://github.com/mikegroseclose/gulp-obfuscate/raw/master/LICENSE"
+    "url": "http://github.com/mikrofusion/gulp-obfuscate/raw/master/LICENSE"
   }]
 }

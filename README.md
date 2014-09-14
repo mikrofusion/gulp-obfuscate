@@ -42,7 +42,7 @@ and this:
 
 --
 
-##### See a working example [here](http://mikegroseclose.github.io/gulp-obfuscate/)
+##### See a working example [here](http://mikrofusion.github.io/gulp-obfuscate/)
 
 --
 
@@ -86,14 +86,14 @@ Custom exclusions are often needed for variables or functions that need to stay 
 
 Note:  defaults will be automatically appended to any options.exclude variables provided.
 
-See [gulp-regex-replace](https://github.com/mikegroseclose/gulp-regex-replace) documentation for more details.
+See [gulp-regex-replace](https://github.com/mikrofusion/gulp-regex-replace) documentation for more details.
 
 ## License
 
-[MIT](http://opensource.org/licenses/MIT) © [Mike Groseclose](//github.com/mikegroseclose)
+[MIT](http://opensource.org/licenses/MIT) © [Mike Groseclose](//github.com/mikrofusion)
 
 [npm-url]: https://npmjs.org/package/gulp-obfuscate
 [npm-image]: https://badge.fury.io/js/gulp-obfuscate.png
 
-[travis-url]: http://travis-ci.org/mikegroseclose/gulp-obfuscate
-[travis-image]: https://secure.travis-ci.org/mikegroseclose/gulp-obfuscate.png?branch=master
+[travis-url]: http://travis-ci.org/mikrofusion/gulp-obfuscate
+[travis-image]: https://secure.travis-ci.org/mikrofusion/gulp-obfuscate.png?branch=master
