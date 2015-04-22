@@ -117,7 +117,3 @@ gulpObfuscate.init = function() {
 gulpObfuscate.init();
 
 module.exports = gulpObfuscate;
-
-gulpObfuscate.init();
-
-module.exports = gulpObfuscate;
