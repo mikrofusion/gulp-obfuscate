@@ -12,11 +12,11 @@ function convertVar(nameHash, prefix, v) {
   var name = prefix + (Object.keys(nameHash).length + gulpObfuscate.seed);
 
   nameHash[v] = name;
-  if (gulpObfuscate.debug) {
+  if (gulpObfuscate.debug == true) {
     gutil.log('gulp-obfuscate (converting): ' + name + ' <-> ' + v );
   }
   return name;
-}
+};
 
 var gulpObfuscate = function(options) {
   if (options == void 0) { options = {}; }
