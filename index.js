@@ -46,6 +46,9 @@ var gulpObfuscate = function(options) {
     case gulpObfuscate.LOOK_OF_DISAPPROVAL:
       replaceStr = 'ಠ_ಠ';
       break;
+    case gulpObfuscate.TABLE_FLIP:
+      replaceStr = '(╯ರ ~ ರ）╯︵ ┻━┻';
+      break;
   }
 
   return replace([
